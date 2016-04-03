@@ -3,8 +3,6 @@ all: build test/test.js
 test/test.js: build
 	js_of_ocaml test.byte -o $@
 
-CONFIGUREFLAGS=--enable-tests
-
 # OASIS_START
 # DO NOT EDIT (digest: a3c674b4239234cbbe53afe090018954)
 

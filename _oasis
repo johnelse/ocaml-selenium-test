@@ -14,11 +14,3 @@ Executable test
   MainIs:             test.ml
   BuildDepends:       js_of_ocaml, js_of_ocaml.syntax
   Install:            false
-
-Test test
-  Command:            xvfb-run test/test.py test/test.html
-  Run$:               flag(tests)
-
-Test test_native
-  Command:            xvfb-run test/test.py test/test_native.html
-  Run$:               flag(tests)
