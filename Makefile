@@ -5,7 +5,10 @@ test/test.js: build
 
 CONFIGUREFLAGS=--enable-tests
 
-SETUP=ocaml setup.ml
+# OASIS_START
+# DO NOT EDIT (digest: a3c674b4239234cbbe53afe090018954)
+
+SETUP = ocaml setup.ml
 
 build: setup.data
 	$(SETUP) -build $(BUILDFLAGS)
@@ -16,19 +19,20 @@ doc: setup.data build
 test: setup.data build
 	$(SETUP) -test $(TESTFLAGS)
 
+all:
+	$(SETUP) -all $(ALLFLAGS)
+
 install: setup.data
 	$(SETUP) -install $(INSTALLFLAGS)
 
 uninstall: setup.data
-	ocamlfind remove $(NAME)
+	$(SETUP) -uninstall $(UNINSTALLFLAGS)
 
 reinstall: setup.data
-	ocamlfind remove $(NAME) || true
 	$(SETUP) -reinstall $(REINSTALLFLAGS)
 
 clean:
 	$(SETUP) -clean $(CLEANFLAGS)
-	rm -f test/test.js
 
 distclean:
 	$(SETUP) -distclean $(DISTCLEANFLAGS)
@@ -40,3 +44,5 @@ configure:
 	$(SETUP) -configure $(CONFIGUREFLAGS)
 
 .PHONY: build doc test all install uninstall reinstall clean distclean configure
+
+# OASIS_STOP

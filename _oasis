@@ -15,7 +15,7 @@ Executable test
   BuildDepends:       js_of_ocaml, js_of_ocaml.syntax
   Install:            false
 
-Test test_ocaml
+Test test
   Command:            xvfb-run test/test.py test/test.html
   Run$:               flag(tests)
 

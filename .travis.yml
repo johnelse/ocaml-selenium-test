@@ -10,7 +10,6 @@ install:
   - wget https://raw.githubusercontent.com/ocaml/ocaml-travisci-skeleton/master/.travis-opam.sh
 script:
   - bash -ex .travis-opam.sh
-  - xvfb-run test/test.py
 env:
   global:
     - PACKAGE=selenium-test
